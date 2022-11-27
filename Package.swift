@@ -4,25 +4,32 @@
 import PackageDescription
 
 let package = Package(
-    name: "SIWESwift",
+    name: "SIWE-Swift",
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "SIWESwift",
-            targets: ["SIWESwift"]),
+            name: "SIWE-Swift",
+            targets: ["SIWE-Swift"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/attaswift/BigInt", from: "5.0.0"),
+        .package(url: "https://github.com/GigaBitcoin/secp256k1.swift.git", .upToNextMajor(from: "0.6.0")),
+        .package(url: "https://github.com/apple/swift-log.git", from: "1.0.0"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "SIWESwift",
-            dependencies: []),
-        .testTarget(
-            name: "SIWESwiftTests",
-            dependencies: ["SIWESwift"]),
+            name: "SIWE-Swift",
+            dependencies: [
+                .product(name: "BigInt", package: "BigInt"),
+                .target(name: "keccaktiny"),
+                .product(name: "secp256k1", package: "secp256k1.swift"),
+                .product(name: "Logging", package: "swift-log"),
+            ],
+            path: "SIWESwift/src"),
+        .target(
+            name: "keccaktiny",
+            dependencies: [],
+            path: "SIWESwift/lib/keccak-tiny",
+            exclude: ["module.map"]
+        ),
     ]
 )
