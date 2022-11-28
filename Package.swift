@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "SIWE-Swift",
+    name: "SIWE",
     products: [
         .library(
-            name: "SIWE-Swift",
-            targets: ["SIWE-Swift"]),
+            name: "SIWE",
+            targets: ["SIWESwift"]),
     ],
     dependencies: [
         .package(url: "https://github.com/attaswift/BigInt", from: "5.0.0"),
@@ -17,7 +17,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SIWE-Swift",
+            name: "SIWESwift",
             dependencies: [
                 .product(name: "BigInt", package: "BigInt"),
                 .target(name: "keccaktiny"),
