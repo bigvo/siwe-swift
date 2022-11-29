@@ -17,6 +17,9 @@ import with
 
 ```swift
 import SIWE
+
+// MARK: SIWEVerifier initialisation
+let siweVerifier = SIWEVerifier.init(network: 1)
 ```
 
 Use with your Vapor app:
