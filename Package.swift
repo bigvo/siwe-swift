@@ -8,7 +8,7 @@ let package = Package(
     products: [
         .library(
             name: "SIWE",
-            targets: ["SIWESwift"]),
+            targets: ["SIWE"]),
     ],
     dependencies: [
         .package(url: "https://github.com/attaswift/BigInt", from: "5.0.0"),
@@ -17,18 +17,18 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SIWESwift",
+            name: "SIWE",
             dependencies: [
                 .product(name: "BigInt", package: "BigInt"),
                 .target(name: "keccaktiny"),
                 .product(name: "secp256k1", package: "secp256k1.swift"),
                 .product(name: "Logging", package: "swift-log"),
             ],
-            path: "SIWESwift/src"),
+            path: "SIWE/src"),
         .target(
             name: "keccaktiny",
             dependencies: [],
-            path: "SIWESwift/lib/keccak-tiny",
+            path: "SIWE/lib/keccak-tiny",
             exclude: ["module.map"]
         ),
     ]

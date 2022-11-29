@@ -75,7 +75,7 @@ public class SIWEVerifier {
         if address.toChecksumAddress() == message.address {
             return true
         } else {
-            // MARK: Smart contract support removed.
+            // MARK: Smart contracts support removed.
             return false
         }
     }
