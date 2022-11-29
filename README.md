@@ -39,3 +39,5 @@ Use with your Vapor app:
             return Response(status: .noContent)
         }
 ```
+
+- Important: Nonce should be at least 8 alphabet letters or digits
